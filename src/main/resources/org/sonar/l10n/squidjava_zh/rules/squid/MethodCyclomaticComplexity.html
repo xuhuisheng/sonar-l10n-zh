@@ -1,0 +1,11 @@
+<p>圈复杂度描述了（&amp;&amp;, ||）操作符和
+	（if, while, do, for, ?:, catch, swtich, case, return, throw）
+	语句中的数量，在类中每个构造方法，方法（不包括getter和setter），
+	静态初始化块，或实例初始化块都会被计算。
+	但是方法最后的return语句不计算在内。</p>
+<p>即使一个类的圈复杂度特别高，
+	这种复杂度可能良好的分布在所有方法中。
+	虽然这样，大多时候，一个非常复杂的类依旧打破了
+	<a href='http://en.wikipedia.org/wiki/Single_responsibility_principle'>单纯责任主体</a>
+	应该进行重构分割成多个类。
+</p>

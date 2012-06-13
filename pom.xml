@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.codehaus.sonar-plugins</groupId>
+    <artifactId>parent</artifactId>
+    <version>13</version>
+    <relativePath>../../parent</relativePath>
+  </parent>
+
+  <groupId>org.codehaus.sonar-plugins.l10n</groupId>
+  <artifactId>sonar-l10n-zh-plugin</artifactId>
+  <packaging>sonar-plugin</packaging>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>L10n :: Chinese Pack</name>
+  <inceptionYear>2012</inceptionYear>
+
+  <organization>
+    <name>SonarSource</name>
+    <url>http://www.sonarsource.com</url>
+  </organization>
+
+  <licenses>
+    <license>
+      <name>GNU LGPL 3</name>
+      <url>http://www.gnu.org/licenses/lgpl.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <properties>
+    <sonar.pluginClass>org.sonar.plugins.l10n.ChinesePackPlugin</sonar.pluginClass>
+    <sonar.version>3.0.1</sonar.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.codehaus.sonar</groupId>
+      <artifactId>sonar-plugin-api</artifactId>
+      <version>${sonar.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.sonar</groupId>
+      <artifactId>sonar-testing-harness</artifactId>
+      <version>${sonar.version}</version>
+    </dependency>
+  </dependencies>
+
+  <developers>
+    <developer>
+      <id>xuhuisheng</id>
+      <name>Xu Huisheng</name>
+    </developer>
+  </developers>
+
+  <build>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
+
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.sonar</groupId>
+        <artifactId>sonar-packaging-maven-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <basePlugin>l10nen</basePlugin>
+          <pluginName>Chinese Pack</pluginName>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>native2ascii-maven-plugin</artifactId>
+        <version>1.0-beta-1</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>native2ascii</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <scm>
+    <connection>scm:svn:http://svn.codehaus.org/sonar-plugins/trunk/l10n/zh</connection>
+    <developerConnection>scm:svn:https://svn.codehaus.org/sonar-plugins/trunk/l10n/zh</developerConnection>
+    <url>http://svn.sonar-plugins.codehaus.org</url>
+  </scm>
+
+</project>
