@@ -28,9 +28,8 @@ import static org.sonar.test.i18n.I18nMatchers.isBundleUpToDate;
 
 public class ChinesePackPluginTest {
 
-  private static final String SONAR_VERSION = "3.0.1";
+  private static final String SONAR_VERSION = "3.1";
 
-  @Ignore
   @Test
   public void coreBundleShouldBeUpToDate() {
     assertThat("core_zh.properties", isBundleUpToDate(SONAR_VERSION));
