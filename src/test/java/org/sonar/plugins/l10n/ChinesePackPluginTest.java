@@ -19,11 +19,12 @@
  */
 package org.sonar.plugins.l10n;
 
+import org.junit.Ignore;
+import org.junit.Test;
+
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.sonar.test.i18n.I18nMatchers.isBundleUpToDate;
-
-import org.junit.Test;
-import org.junit.Ignore;
 
 public class ChinesePackPluginTest {
 
@@ -35,10 +36,19 @@ public class ChinesePackPluginTest {
     assertThat("core_zh.properties", isBundleUpToDate(SONAR_VERSION));
   }
 
-  @Ignore
   @Test
   public void gwtBundleShouldBeUpToDate() {
     assertThat("gwt_zh.properties", isBundleUpToDate(SONAR_VERSION));
+  }
+
+  @Test
+  public void squidJavaBundleShouldBeUpToDate() {
+    assertThat("squidjava_zh.properties", isBundleUpToDate(SONAR_VERSION));
+  }
+
+  @Test
+  public void testGetExtensions() throws Exception {
+    assertThat(new ChinesePackPlugin().getExtensions().size(), is(0));
   }
 
 }
