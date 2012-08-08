@@ -28,7 +28,12 @@ import static org.sonar.test.i18n.I18nMatchers.isBundleUpToDate;
 
 public class ChinesePackPluginTest {
 
-  private static final String SONAR_VERSION = "3.1";
+  private static final String SONAR_VERSION = "3.2";
+
+  @Test
+  public void checkstyleBundleShouldBeUpToDate() {
+    assertThat("checkstyle_zh.properties", isBundleUpToDate(SONAR_VERSION));
+  }
 
   @Test
   public void coreBundleShouldBeUpToDate() {
@@ -36,8 +41,18 @@ public class ChinesePackPluginTest {
   }
 
   @Test
+  public void findbugsBundleShouldBeUpToDate() {
+    assertThat("findbugs_zh.properties", isBundleUpToDate(SONAR_VERSION));
+  }
+
+  @Test
   public void gwtBundleShouldBeUpToDate() {
     assertThat("gwt_zh.properties", isBundleUpToDate(SONAR_VERSION));
+  }
+
+  @Test
+  public void pmdBundleShouldBeUpToDate() {
+    assertThat("pmd_zh.properties", isBundleUpToDate(SONAR_VERSION));
   }
 
   @Test
