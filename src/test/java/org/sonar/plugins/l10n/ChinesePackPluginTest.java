@@ -19,50 +19,37 @@
  */
 package org.sonar.plugins.l10n;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-import static org.sonar.test.i18n.I18nMatchers.isBundleUpToDate;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.sonar.test.i18n.I18nMatchers.assertAllBundlesUpToDate;
 
 public class ChinesePackPluginTest {
 
+  /**
+   * Version of Sonar which is covered by the language pack
+   */
   private static final String SONAR_VERSION = "3.2";
 
-  @Test
-  public void checkstyleBundleShouldBeUpToDate() {
-    assertThat("checkstyle_zh.properties", isBundleUpToDate(SONAR_VERSION));
-  }
+  /**
+   * Bundles of the forge plugins covered by the language pack
+   */
+
+  private static final Map<String, String> pluginIdsToBundleUrlMap = new HashMap<String, String>() {
+    {
+      // put here the plugins covered by this language pack
+
+      // The "java.properties" core bundle must currently be checked manually
+      // => see http://jira.codehaus.org/browse/SONAR-3735
+      put("java", "https://raw.github.com/SonarSource/sonar/3.2/plugins/sonar-l10n-en-plugin/src/main/resources/org/sonar/l10n/java.properties");
+    }
+  };
 
   @Test
-  public void coreBundleShouldBeUpToDate() {
-    assertThat("core_zh.properties", isBundleUpToDate(SONAR_VERSION));
-  }
-
-  @Test
-  public void findbugsBundleShouldBeUpToDate() {
-    assertThat("findbugs_zh.properties", isBundleUpToDate(SONAR_VERSION));
-  }
-
-  @Test
-  public void gwtBundleShouldBeUpToDate() {
-    assertThat("gwt_zh.properties", isBundleUpToDate(SONAR_VERSION));
-  }
-
-  @Test
-  public void pmdBundleShouldBeUpToDate() {
-    assertThat("pmd_zh.properties", isBundleUpToDate(SONAR_VERSION));
-  }
-
-  @Test
-  public void squidJavaBundleShouldBeUpToDate() {
-    assertThat("squidjava_zh.properties", isBundleUpToDate(SONAR_VERSION));
-  }
-
-  @Test
-  public void testGetExtensions() throws Exception {
-    assertThat(new ChinesePackPlugin().getExtensions().size(), is(0));
+  public void test() throws Exception {
+    assertAllBundlesUpToDate(SONAR_VERSION, pluginIdsToBundleUrlMap);
   }
 
 }
