@@ -46,8 +46,8 @@
 	<sonar-checkstyle-plugin.version>3.3</sonar-checkstyle-plugin.version>
 	<sonar-findbugs-plugin.version>3.3</sonar-findbugs-plugin.version>
 
-	<sonar-squid-java-plugin.version>1.0-RC1</sonar-squid-java-plugin.version>
-	<sonar-java-plugin.version>1.0-RC1</sonar-java-plugin.version>
+	<sonar-squid-java-plugin.version>1.0</sonar-squid-java-plugin.version>
+	<sonar-java-plugin.version>1.0</sonar-java-plugin.version>
   </properties>
 
   <dependencies>
