@@ -16,6 +16,7 @@
   <name>L10n :: Chinese Pack</name>
   <url>http://docs.codehaus.org/display/SONAR/Chinese+Pack</url>
   <inceptionYear>2012</inceptionYear>
+  <description><![CDATA[Language pack for Chinese]]></description>
 
   <organization>
     <name>SonarSource</name>
@@ -122,6 +123,7 @@
         <configuration>
           <basePlugin>l10nen</basePlugin>
           <pluginName>Chinese Pack</pluginName>
+          <pluginDescription><![CDATA[Language pack for Chinese]]></pluginDescription>
         </configuration>
       </plugin>
 
