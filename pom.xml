@@ -48,6 +48,7 @@
     <sonar-checkstyle-plugin.version>1.1-RC2</sonar-checkstyle-plugin.version>
     <sonar-findbugs-plugin.version>1.1-RC2</sonar-findbugs-plugin.version>
     <sonar-squid-java-plugin.version>1.1-RC2</sonar-squid-java-plugin.version>
+    <sonar-java-plugin.version>1.1-RC2</sonar-java-plugin.version>
   </properties>
 
   <dependencies>
@@ -98,6 +99,12 @@
       <groupId>org.codehaus.sonar-plugins.java</groupId>
       <artifactId>sonar-squid-java-plugin</artifactId>
       <version>${sonar-squid-java-plugin.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.sonar-plugins.java</groupId>
+      <artifactId>sonar-java-plugin</artifactId>
+      <version>${sonar-java-plugin.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
