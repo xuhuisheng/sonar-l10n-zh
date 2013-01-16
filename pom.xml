@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.codehaus.sonar-plugins</groupId>
     <artifactId>parent</artifactId>
-    <version>15</version>
+    <version>16</version>
   </parent>
 
   <groupId>org.codehaus.sonar-plugins.l10n</groupId>
