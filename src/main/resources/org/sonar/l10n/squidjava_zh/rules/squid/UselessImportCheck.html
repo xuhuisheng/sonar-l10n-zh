@@ -1,0 +1,25 @@
+<p>
+文件的import部分应该由集成开发环境（IDE）处理，不用开发者手工处理。
+这种情况下，不应用出现无用的import。
+留着它们会降低代码可读性，因为它们非常令人疑惑。
+</p>
+
+<p>如下代码演示了这个规则：</p>
+
+<pre>
+package my.company;
+
+import java.lang.String;        // Non-Compliant - java.lang classes are always implicitly imported
+import my.company.SomeClass;    // Non-Compliant - same package files are always implicitly imported
+import java.io.File;            // Non-Compliant - File is not used
+
+import my.company2.SomeType;
+import my.company2.SomeType;    // Non-Compliant - 'SomeType' is already imported
+
+class ExampleClass {
+
+  public String someString;
+  public SomeType something;
+
+}
+</pre>

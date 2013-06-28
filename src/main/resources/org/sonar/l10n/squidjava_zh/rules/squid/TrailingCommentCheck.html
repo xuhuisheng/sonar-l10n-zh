@@ -1,0 +1,21 @@
+<p>
+这个规则验证单行注释不会放在代码行的最后。
+这个规则的主要目标是提高可读性，尾部的注释应该正确的书写，并格式化（正确的对齐，不要和代码结构混合，不要太长）但是通常，自动代码格式化工具不会正确处理：尾端的代码不好阅读。
+把注释放在代码上面的空行更好一些，
+它们通常都能被看到并正确的格式化。
+</p>
+
+<p>
+然而，这个规则允许使用尾部的“元数据注释” - 这个模式是可配置的，那些元数据注释通常非常短，在很多情况下会经常用到。
+</p>
+
+<pre>
+// The following line is non-compliant
+int a1 = b + c; // This is a trailing comment that can be very very long
+
+// This very long comment is better placed before the line of code
+int a2 = b + c;
+
+// The following line is compliant with the default configuration of the rule
+String a3 = "id"; // $NON-NLS-1$
+</pre>

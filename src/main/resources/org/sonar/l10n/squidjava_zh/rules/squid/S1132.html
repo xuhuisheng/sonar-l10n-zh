@@ -1,0 +1,19 @@
+<p>
+最好把字符串数据放在<code>equals()</code>或<code>equalsIgnoreCase()</code>的左侧。
+这样可以避免空指针异常，因为字符串数据永远不可能为null。
+</p>
+
+<p>如下代码：</p>
+
+<pre>
+String myString = null;
+
+System.out.println("Equal? " + myString.equals("foo"));                        // Non-Compliant - will raise a NPE
+System.out.println("Equal? " + (myString != null && myString.equals("foo")));  // Non-Compliant - null check could be removed
+</pre>
+
+<p>应该重构为：</p>
+
+<pre>
+System.out.println("Equal?" + "foo".equals(myString));                         // Compliant - properly deals with the null case
+</pre>

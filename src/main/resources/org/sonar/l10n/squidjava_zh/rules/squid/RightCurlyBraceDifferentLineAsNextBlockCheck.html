@@ -1,0 +1,30 @@
+<p>
+分享一些代码规则是让团队高效协作的一个关键因素。
+这个规则要求把大括号和对应的 <code>else</code>, <code>catch</code> 或 <code>finally</code> 放在不同行。
+</p>
+
+<p>
+如下代码演示了这个规则：
+</p>
+
+<pre>
+public void myMethod() {
+  if(something) {
+    executeTask();
+  } else if (somethingElse) {          // Non-Compliant
+    doSomethingElse();
+  }
+  else {                               // Compliant
+     generateError();
+  }
+
+  try {
+    generateOrder();
+  } catch (Exception e) {              // Non-Compliant
+    log(e);
+  }
+  finally {                            // Compliant
+    closeConnection();
+  }
+}
+</pre>

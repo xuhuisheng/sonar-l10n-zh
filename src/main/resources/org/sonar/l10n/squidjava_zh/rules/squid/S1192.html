@@ -1,0 +1,36 @@
+<p>
+重复的字符串文本是应该重构的易错点，因为每个点都要注意每个更新。
+常量可以引用很多地方，可以在一个地方进行更新。
+</p>
+
+<p>如下代码：</p>
+
+<pre>
+public void run() {
+  prepare("action1");                              // Non-Compliant - "action1" is duplicated 3 times
+  execute("action1");
+  release("action1");
+}
+
+@SuppressWarning("all")                            // Compliant - annotations are excluded
+private void method1(} { /* ... */ }
+@SuppressWarning("all")
+private void method2(} { /* ... */ }
+
+public String method3(String a) {
+  System.out.println("'" + a + "'");               // Compliant - literal "'" has less than 5 characters and is excluded
+  return "";                                       // Compliant - literal "" has less than 5 characters and is excluded
+}
+</pre>
+
+<p>应该重构为：</p>
+
+<pre>
+private static final String ACTION_1 = "action1";  // Compliant
+
+public void run() {
+  prepare(ACTION_1);                               // Compliant
+  execute(ACTION_1);
+  release(ACTION_1);
+}
+</pre>

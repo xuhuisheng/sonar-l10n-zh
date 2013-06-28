@@ -1,0 +1,20 @@
+<p>
+把一个常量设置为<code>final</code>，而不是<code>static final</code>，会导致它在这个类的所有实例中重复创建，
+并导致执行应用时浪费内存。
+</p>
+
+<p>如下代码：</p>
+
+<pre>
+public class Myclass {
+  public final THRESHOLD = 3;           // Non-Compliant
+}
+</pre>
+
+<p>应该重构为：</p>
+
+<pre>
+public class Myclass {
+  public static final THRESHOLD = 3;    // Compliant
+}
+</pre>

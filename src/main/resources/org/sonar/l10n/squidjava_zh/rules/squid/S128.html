@@ -1,0 +1,27 @@
+<p>
+如果switch条件结尾没有明确的结束，会继续执行下一个条件。
+有事是故意这样的，但大多数时候是一个错误，并会导致预期外的行为。
+</p>
+
+<p>这个规则不会限制空条件。实际上这些空调间允许你为一组条件指定相同的行为。</p>
+
+<p>如下代码演示了这个规则：</p>
+
+<pre>
+switch (myVariable) {
+  case 0:                                // Compliant
+  case 1:                                // Compliant
+    doSomething();
+    break;
+  case 2:                                // Compliant
+    return;
+  case 3:                                // Compliant
+    throw new IllegalStateException();
+  case 4:                                // Compliant
+    continue;
+  case 5:                                // Non-Compliant - both 'doSomething()' and 'doSomethingElse()' will be executed
+    doSomething();
+  default:                               // Non-Compliant
+    doSomethingElse();
+}
+</pre>

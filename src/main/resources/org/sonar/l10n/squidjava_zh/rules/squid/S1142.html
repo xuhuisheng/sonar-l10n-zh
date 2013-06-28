@@ -1,0 +1,23 @@
+<p>
+一个方法中使用了过多的return语句，会加大方法的基本复杂性，因为流程流在遇到每个return语句时都会中断。
+这使得我们难以阅读，也难以理解方法的逻辑。
+</p>
+
+<p>
+下面的代码演示了这个规则，默认阈值为3：
+</p>
+
+<pre>
+public boolean myMethod() { // Non-Compliant as there are 4 return statements
+  if (condition1) {
+    return true;
+  } else {
+    if (condition2) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+  return false;
+}
+</pre>

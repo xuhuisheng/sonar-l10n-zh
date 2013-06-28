@@ -1,0 +1,25 @@
+<p><code>Object.finalize()</code>会在对象没有其他引用时，被垃圾收集器调用。</p>
+
+<p>重载这个方法会产生误导：</p>
+<ul>
+  <li>重载的方法不会被垃圾收集器调用。</li>
+  <li>用户不想调用<code>Object.finalize()</code>，会产生疑惑。</li>
+</ul>
+
+<p>应该给方法起其他名字。</p>
+
+<p>如下代码：</p>
+
+<pre>
+public void finalize(int someParameter) {        // Non-Compliant
+  /* ... */
+}
+</pre>
+
+<p>应该重构为：</p>
+
+<pre>
+public void someBetterName(int someParameter) {  // Compliant
+  /* ... */
+}
+</pre>

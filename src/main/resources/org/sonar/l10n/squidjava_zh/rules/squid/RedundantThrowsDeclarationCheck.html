@@ -1,0 +1,29 @@
+<p>
+如下情况会造成<code>throws</code>中的异常声明出现重复：
+</p>
+
+<ul>
+  <li>重复出现多次</li>
+  <li>存在另一个异常的子类。</li>
+  <li>它是一个<code>RuntimeException</code>，或是它的子类</li>
+</ul>
+
+<p>
+如下代码所示：
+</p>
+
+<pre>
+void foo() throws MyException, MyException {}  // Non-Compliant - should be listed once
+void bar() throws Throwable, Exception {}      // Non-Compliant - Exception is a subclass of Throwable
+void baz() throws RuntimeException {}          // Non-Compliant - RuntimeException can always be thrown
+</pre>
+
+<p>
+应该重构为：
+</p>
+
+<pre>
+void foo() throws MyException {}               // Compliant
+void bar() throws Throwable {}                 // Compliant
+void baz() {}                                  // Compliant
+</pre>

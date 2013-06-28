@@ -1,0 +1,52 @@
+<p>
+返回<code>null</code>，而不是实际的数组或集合，强制要求方法的调用者判断null，这让代码更复杂，不易读。
+而且，很多时候，<code>null</code>就是用来表示空。
+</p>
+
+<p>如下代码：</p>
+
+<pre>
+public static Result[] getResults() {
+  return null;                             // Non-Compliant
+}
+
+public static void main(String[] args) {
+  Result[] results = getResults();
+
+  if (results != null) {                   // Nullity test required to prevent NPE
+    for (Result result: results) {
+      /* ... */
+    }
+  }
+}
+</pre>
+
+<p>应该重构为：</p>
+
+<pre>
+public static Result[] getResults() {
+  return new Result[0];                    // Compliant
+}
+
+public static void main(String[] args) {
+  for (Result result: getResults()) {
+    /* ... */
+  }
+}
+</pre>
+
+<p>这个规则也可以应用于集合：</p>
+
+<pre>
+public static List&lt;Result&gt; getResults() {
+  return null;                             // Non-Compliant
+}
+</pre>
+
+<p>应该重构为：</p>
+
+<pre>
+public static List&lt;Result&gt; getResults() {
+  return Collections.EMPTY_LIST;           // Compliant
+}
+</pre>

@@ -1,0 +1,19 @@
+<p>Switch的条件应该保持简短，以保证紧凑并便于阅读。</p>
+
+<p>如下代码演示换个规则，默认阈值为5：</p>
+
+<pre>
+switch (myVariable) {
+  case 0:                     // Compliant - 5 lines till following case
+    System.out.println("");
+    System.out.println("");
+    System.out.println("");
+    break;
+  default:                    // Non-Compliant - 6 lines till switch end
+    System.out.println("");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("");
+    break;
+}
+</pre>

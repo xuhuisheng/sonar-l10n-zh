@@ -1,0 +1,34 @@
+<p>限制一个循环中<code>break</code> 和 <code>continue</code>语句的数量可以保持一种良好的结构编程。</p>
+
+<p>
+在一个循环中使用一个 <code>break</code> 活 <code>continue</code> 语句是可以接受的，这是允许的最佳代码。
+大多数情况，可以把它们结合到一起，或合并循环条件。
+</p>
+
+<p>如下代码所示：</p>
+
+<pre>
+for (int i = 1; i <= 10; i++) {     // Non-Compliant - 2 continue - one might be tempted to add some logic in between
+  if (i % 2 == 0) {
+    continue;
+  }
+
+  if (i % 3 == 0) {
+    continue;
+  }
+
+  System.out.println("i = " + i);
+}
+</pre>
+
+<p>应该重构为：</p>
+
+<pre>
+for (int i = 1; i <= 10; i++) {     // Compliant
+  if (i % 2 == 0 || i % 3 == 0) {
+    continue;
+  }
+
+  System.out.println("i = " + i);
+}
+</pre>

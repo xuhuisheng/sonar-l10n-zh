@@ -1,0 +1,19 @@
+<p>
+使用<code>Collection.size()</code>可以判断集合是否为空，而使用<code>Collection.isEmpty()</code>会提升代码可读性。
+</p>
+
+<p>如下代码：</p>
+
+<pre>
+if (myCollection.size() == 0) {  // Non-Compliant
+  /* ... */
+}
+</pre>
+
+<p>应该重构为：</p>
+
+<pre>
+if (myCollection.isEmpty()) {    // Compliant
+  /* ... */
+}
+</pre>

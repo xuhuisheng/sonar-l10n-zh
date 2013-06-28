@@ -1,0 +1,12 @@
+<p>
+在Java 5中，<code>enum</code>已经成为了关键字，因此不能再用于变量名。
+目前的java编译器会在编译使用<code>enum</code>命名的变量时抛出错误。
+</p>
+
+<p>如下代码演示了这个规则：</p>
+
+<pre>
+public void doSomething() {
+  int enum = 42;            // Non-Compliant
+}
+</pre>

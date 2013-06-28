@@ -1,0 +1,24 @@
+<p>
+重载<code>Object.finalize()</code>方法必须做到谨慎的处理一些系统资源。
+在方法实现最后调用<code>super.finalize()</code>是被强力推荐的，因为这样上级实现也可以处理一些系统资源。
+</p>
+
+<p>
+如下代码演示了这个规则：
+</p>
+
+<pre>
+protected void finalize() {            // Non-Compliant
+  releaseSomeResources();
+}
+
+protected void finalize() {
+  super.finalize();                    // Non-Compliant
+  releaseSomeResources();
+}
+
+protected void finalize() {
+  releaseSomeResources();
+  super.finalize();                    // Compliant
+}
+</pre>

@@ -1,0 +1,30 @@
+<p>
+废弃（Deprecation）应该同时使用<code>@Deprecated</code> Java语言注解和 <code>@deprecated</code> Javadoc 标签。
+注解让IDE可以警告对应的废弃元素，
+标签可以用来解释什么时候废弃，和如何重构。
+</p>
+
+<p>下列代码演示了这个规则：</p>
+
+<pre>
+class MyClass {
+
+  @Deprecated             // Non-Compliant
+  public void foo1() {
+  }
+
+  /**
+    * @deprecated
+    */
+  public void foo2() {    // Non-Compliant
+  }
+
+  /**
+    * @deprecated
+    */
+  @Deprecated
+  public void foo3() {    // Compliant
+  }
+
+}
+</pre>

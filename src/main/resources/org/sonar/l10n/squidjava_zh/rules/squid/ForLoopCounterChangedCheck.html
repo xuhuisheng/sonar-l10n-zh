@@ -1,0 +1,33 @@
+<p>
+循环体中不应该修改循环计数器。
+不过，其他控制循环逻辑的变量可以在循环中修改，比如，表示一些事情完成的标记位，会在for语句中进行判断。
+</p>
+
+<p>
+如下代码所示：
+</p>
+
+<pre>
+String[] names = new String[]{ "Jack", "Jim", null, "John" };
+for (int i = 0; i < names.length; i++) {
+  if (names[i] == null) {
+    i = names.length;                                             // Non-Compliant
+  } else {
+    System.out.println(names[i]);
+  }
+}
+</pre>
+
+<p>
+应该重构为： 
+</p>
+
+<pre>
+String[] names = new String[]{ "Jack", "Jim", null, "John" };
+for (String name: names) {
+  if (name == null) {
+    break;                                                        // Compliant
+  }
+  System.out.println(name);
+}
+</pre>

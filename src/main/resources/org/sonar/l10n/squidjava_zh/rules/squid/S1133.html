@@ -1,0 +1,25 @@
+<p>
+这个规范用来跟踪标记为废弃（deprecated）的代码。
+废弃的代码最终都要删除。
+</p>
+
+<p>
+下面的代码演示了这个规则：
+</p>
+
+<pre>
+class Foo {
+  /**
+    * @deprecated
+    */
+  public void foo() {    // Non-Compliant
+  }
+
+  @Deprecated            // Non-Compliant
+  public void bar() {
+  }
+
+  public void baz() {    // Compliant
+  }
+}
+</pre>

@@ -1,0 +1,16 @@
+<p>
+在等待Java支持闭包的过程，匿名内部类是最方便的方法，不用创建类就能把行为注入。
+但是这些匿名内部类应该只使用几行代码就完成这个行为。
+对于很复杂的代码，应该使用命名的类。
+</p>
+
+<p>:</p>
+
+<pre>
+button.addActionListener(new ActionListener() {   // Non-Compliant - 6 lines till closing '}'
+  public void actionPerformed(ActionEvent e) {
+    doSomething1();
+    doSomething2();
+  }
+});
+</pre>

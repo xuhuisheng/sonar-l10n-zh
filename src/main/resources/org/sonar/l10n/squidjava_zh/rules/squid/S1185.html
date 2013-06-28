@@ -1,0 +1,25 @@
+<p>重载一个方法，仅仅调用了超类的相同方法，没有执行其他操作，是无用并且误导的。</p>
+
+<p>如下代码演示了这个规则：</p>
+
+<pre>
+public void doSomething() {                     // Non-Compliant
+  super.doSomething();
+}
+
+@Override
+public boolean isLegal(Action action) {         // Non-Compliant
+  return super.isLegal(action);
+}
+
+@Override
+public boolean isLegal(Action action) {         // Compliant - not simply forwarding the call
+  return super.isLegal(new Action(/* ... */));
+}
+
+@Id
+@Override
+public int getId() {                            // Compliant - there is annotation different from @Override
+  return super.getId();
+}
+</pre>

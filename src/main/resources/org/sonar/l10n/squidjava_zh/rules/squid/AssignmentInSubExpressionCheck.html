@@ -1,0 +1,24 @@
+<p>
+子表达式中的赋值语句很难理解，也让代码很难阅读。
+也可能常犯一种把<code>==</code>写成<code>=</code>的错误。
+实话实话，表示不应该有这种偏于一侧的效果。
+</p>
+
+<p>如下代码所示：</p>
+
+<pre>
+System.out.println(i = 42);  // Non-Compliant
+</pre>
+
+<p>应该重构为：</p>
+
+<pre>
+System.out.println(i == 42); // Compliant
+</pre>
+
+<p>或者：</p>
+
+<pre>
+i = 42;
+System.out.println(i);       // Compliant
+</pre>

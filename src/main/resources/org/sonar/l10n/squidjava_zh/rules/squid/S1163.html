@@ -1,0 +1,27 @@
+<p>
+在finally代码块中抛出一个异常会屏蔽之前在<code>try</code>或<code>catch</code>抛出的异常。
+被屏蔽的异常信息和堆栈都会丢失。
+</p>
+
+<p>如下代码：</p>
+
+<pre>
+try {
+  /* some work which end up throwing an exception */
+  throw new IllegalArgumentException();
+} finally {
+  /* clean up */
+  throw new RuntimeException();                          // Non-Compliant - will mask the IllegalArgumentException
+}
+</pre>
+
+<p>应该重构为：</p>
+
+<pre>
+try {
+  /* some work which end up throwing an exception */
+  throw new IllegalArgumentException();
+} finally {
+  /* clean up */                                         // Compliant
+}
+</pre>

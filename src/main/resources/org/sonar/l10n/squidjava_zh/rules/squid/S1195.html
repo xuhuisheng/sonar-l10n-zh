@@ -1,0 +1,21 @@
+<p>
+根据Java语言规范：
+</p>
+
+<pre>
+为了兼容老版本的Java SE平台，
+返回数组的方法的声明可以把（一些或全部）空方括号放在参数列表后面。
+新代码中不应该使用这种过时的语法。
+</pre>
+
+<p>如下代码演示了这个规则：</p>
+
+<pre>
+public int getVector()[] { /* ... */ }    // Non-Compliant
+
+public int[] getVector() { /* ... */ }    // Compliant
+
+public int[] getMatrix()[] { /* ... */ }  // Non-Compliant
+
+public int[][] getMatrix() { /* ... */ }  // Compliant
+</pre>

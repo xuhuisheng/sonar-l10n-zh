@@ -1,0 +1,17 @@
+<p>
+使用<code>toLowerCase()</code>或<code>toUpperCase()</code>来进行大小写不敏感的比较是低效的，因为它会创建临时的，内部的<code>String</code>对象。
+</p>
+
+<p>如下代码：</p>
+
+<pre>
+boolean result1 = foo.toUpperCase().equals(bar);             // Non-Compliant
+boolean result2 = foo.equals(bar.toUpperCase());             // Non-Compliant
+boolean result3 = foo.toLowerCase().equals(bar.LowerCase()); // Non-Compliant
+</pre>
+
+<p>应该重构为：</p>
+
+<pre>
+boolean result = foo.equalsIgnoreCase(bar);                  // Compliant
+</pre>

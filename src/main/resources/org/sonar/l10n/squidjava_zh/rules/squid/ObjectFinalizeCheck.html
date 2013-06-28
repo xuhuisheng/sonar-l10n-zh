@@ -1,0 +1,14 @@
+<p>
+根据官方Java文档，<code>Object.finalize()</code>会被垃圾收集器调用，当垃圾收集器认定这个对象没有被引用时。
+直接调用这个方法会破坏这个协议，所以会产生误导。
+</p>
+
+<p>
+下面代码演示了这个规则：
+</p>
+
+<pre>
+public void dispose() throws Throwable {
+  this.finalize();                       // Non-Compliant
+}
+</pre>

@@ -1,0 +1,38 @@
+<p>
+条件永远为true或false的if语句是没必要村爱的，也让降低代码的可读性。
+</p>
+
+<p>如下代码所示：</p>
+
+<pre>
+public void myMethod() {
+  if (true) {                   // Non-Compliant
+    doSomething();
+  }
+}
+</pre>
+
+<p>应该重构为：</p>
+
+<pre>
+public void myMethod() {
+  doSomething();                // Compliant
+}
+</pre>
+
+<p>如下代码所示：</p>
+
+<pre>
+public void myMethod() {
+  if (false) {                  // Non-Compliant
+    doSomething();
+  }
+}
+</pre>
+
+<p>应该重构为：</p>
+
+<pre>
+public void myMethod() {        // Compliant
+}
+</pre>

@@ -1,0 +1,23 @@
+<p>
+局部变量和类变量重名是一个不良实践，会降低代码的可读性：这让人感到迷惑，应该访问局部变量还是类变量。
+</p>
+
+<p>
+下述代码演示了这个规则：
+</p>
+
+<pre>
+class Foo {
+  public int myField;
+
+  public Foo(int myField) {                   // Compliant - method parameters are not checked
+    this.myField = myField;
+  }
+
+  @Override
+  public String toString() {
+    int myField = 0;                          // Non-Compliant - should be renamed
+    return "Foo{MyField: " + myField + "}";
+  }
+}
+</pre>

@@ -1,0 +1,65 @@
+<p>根据Oracle的Javadoc，<code>Object.clone()</code>的通常惯例如下：</p>
+<ul>
+  <li><code>x.clone() != x</code></li>
+  <li><code>x.clone().getClass() == x.getClass()</code></li>
+  <li><code>x.clone().equals(x)</code></li>
+</ul>
+
+<p>通过调用<code>super.clone()</code>返回对象，可以帮助我们满足这些条件：</p>
+<ul>
+  <li><code>super.clone()</code> 返回一个新对象实例</li>
+  <li><code>super.clone()</code> 返回调用<code>clone()</code>方法相同类型的对象实例</li>
+  <li><code>Object.clone()</code> 为对象状态执行影子复制</li>
+</ul>
+
+<p>比如，如下代码：</p>
+
+<pre>
+class BaseClass implements Cloneable {
+  @Override
+  public Object clone() throws CloneNotSupportedException {    // Non-Compliant - should return the super.clone() instance
+    return new BaseClass();
+  }
+}
+
+class DerivedClass extends BaseClass implements Cloneable {
+  /* Does not override clone() */
+
+  public void sayHello() {
+    System.out.println("Hello, world!");
+  }
+}
+
+class Application {
+  public static void main(String[] args) throws Exception {
+    DerivedClass instance = new DerivedClass();
+    ((DerivedClass) instance.clone()).sayHello();              // Throws a ClassCastException because invariant #2 is violated
+  }
+}
+</pre>
+
+<p>应该重构为：</p>
+
+<pre>
+class BaseClass implements Cloneable {
+  @Override
+  public Object clone() throws CloneNotSupportedException {    // Compliant
+    return super.clone();
+  }
+}
+
+class DerivedClass extends BaseClass implements Cloneable {
+  /* Does not override clone() */
+
+  public void sayHello() {
+    System.out.println("Hello, world!");
+  }
+}
+
+class Application {
+  public static void main(String[] args) throws Exception {
+    DerivedClass instance = new DerivedClass();
+    ((DerivedClass) instance.clone()).sayHello();              // Displays "Hello, world!" as expected. Invariant #2 is satisfied
+  }
+}
+</pre>

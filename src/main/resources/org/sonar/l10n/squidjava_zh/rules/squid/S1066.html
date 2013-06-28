@@ -1,0 +1,19 @@
+<p>合并可以折叠的 <code>if</code> 语句嫩巩固增强代码的可读性。</p>
+
+<p>如下代码所示：</p>
+
+<pre>
+if (condition1) {
+  if (condition2) {             // Non-Compliant
+    /* ... */
+  }
+}
+</pre>
+
+<p>应该重构为：</p>
+
+<pre>
+if (condition1 && condition2) { // Compliant
+  /* ... */
+}
+</pre>

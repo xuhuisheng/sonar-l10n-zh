@@ -1,0 +1,21 @@
+<p>名为<code>hashcode()</code>的方法有两种情况：</p>
+
+<ul>
+  <li>一个bug。重载了<code>Object.hashCode()</code>意味着应用不会和预料中一样执行。</li>
+  <li>故意为之。但是这个名字会误导其他开发者，他们会认为这是个bug。</li>
+</ul>
+
+<p>两种情况下，方法都应该重命名。</p>
+
+<p>如下代码：</p>
+
+<pre>
+public int hashcode() { /* ... */ }    // Non-Compliant
+</pre>
+
+<p>应该重构为：</p>
+
+<pre>
+@Override
+public int hashCode() { /* ... */ }    // Compliant
+</pre>

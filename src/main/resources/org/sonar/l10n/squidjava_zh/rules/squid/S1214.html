@@ -1,0 +1,46 @@
+<p>按照Joshua Bloch，"Effective Java"作者的说法：</p>
+
+<blockquote>
+<p>
+常量接口模式是接口的一种误用。
+</p>
+
+<p>
+类使用一些内部常量是一种实现细节。
+实现常量接口会导致这些实现细节泄露到类的导出API中。
+不建议用户的类四号线一个常量接口。
+实际上，它会导致困惑。
+更糟糕的是，它代表了一个承诺：
+如果未来发布的类进行了修改，不在需要这个常量，
+它依然必须实现接口来保证二进制兼容。
+如果非final类实现了常量接口，
+所有子类都会被接口中的常量污染。
+</p>
+</blockquote>
+
+<p>比如：</p>
+
+<pre>
+interface Status {               // Non-Compliant
+   int OPEN = 1;
+   int CLOSED = 2;
+}
+</pre>
+
+<p>应该重构为：</p>
+
+<pre>
+public enum Status {             // Compliant
+  OPEN,
+  CLOSED;
+}
+</pre>
+
+<p>或修改为：</p>
+
+<pre>
+public final class Status {             // Compliant
+   public static final int OPEN = 1;
+   public static final int CLOSED = 2;
+}
+</pre>

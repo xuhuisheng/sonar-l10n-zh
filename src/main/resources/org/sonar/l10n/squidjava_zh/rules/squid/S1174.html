@@ -1,0 +1,16 @@
+<p>
+<code>Object.finalize()</code>方法的协议是非常清楚的：只有垃圾收集器会调用这个方法。
+把这个方法设置为public会有误导作用，因为它暗示每个调用者都可以使用它。
+</p>
+
+<p>如下代码演示了这个规则：</p>
+
+<pre>
+public class MyClass {
+
+  @Override
+  public void finalize() {    // Non-Compliant
+    /* ... */
+  }
+}
+</pre>

@@ -1,0 +1,23 @@
+<p>
+根据对应类型捕获的多重代码应该使用通用的异常捕获，并根据类型检测。
+</p>
+
+<p>比如，如下代码：</p>
+
+<pre>
+try {
+  /* ... */
+} catch (Exception e) {
+  if(e instanceof IOException) { /* ... */ }         // Non-Compliant
+  if(e instanceof NullPointerException{ /* ... */ }  // Non-Compliant
+}
+</pre>
+
+<p>应该重构为：</p>
+
+<pre>
+try {
+  /* ... */
+} catch (IOException e) { /* ... */ }                // Compliant
+} catch (NullPointerException e) { /* ... */ }       // Compliant
+</pre>
