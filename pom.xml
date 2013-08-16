@@ -45,9 +45,9 @@
 
   <properties>
     <sonar.pluginClass>org.sonar.plugins.l10n.ChinesePackPlugin</sonar.pluginClass>
-    <sonar.version>3.7-RC2</sonar.version>
-    <sonar-l10n-en-plugin.version>3.7-RC2</sonar-l10n-en-plugin.version>
-    <sonar-core-plugin.version>3.7-RC2</sonar-core-plugin.version>
+    <sonar.version>3.7</sonar.version>
+    <sonar-l10n-en-plugin.version>3.7</sonar-l10n-en-plugin.version>
+    <sonar-core-plugin.version>3.7</sonar-core-plugin.version>
 
     <sonar-pmd-plugin.version>1.3</sonar-pmd-plugin.version>
     <sonar-checkstyle-plugin.version>1.3</sonar-checkstyle-plugin.version>
