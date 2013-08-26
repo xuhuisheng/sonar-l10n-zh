@@ -11,7 +11,7 @@
   <groupId>org.codehaus.sonar-plugins.l10n</groupId>
   <artifactId>sonar-l10n-zh-plugin</artifactId>
   <packaging>sonar-plugin</packaging>
-  <version>1.6</version>
+  <version>1.7-SNAPSHOT</version>
 
   <name>L10n :: Chinese Pack</name>
   <url>http://docs.codehaus.org/display/SONAR/Chinese+Pack</url>
@@ -35,7 +35,7 @@
     <connection>scm:git:git://github.com/SonarCommunity/sonar-l10n-zh.git</connection>
     <developerConnection>scm:git:git@github.com:SonarCommunity/sonar-l10n-zh.git</developerConnection>
     <url>https://github.com/SonarCommunity/sonar-l10n-zh</url>
-    <tag>sonar-l10n-zh-plugin-1.6</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <issueManagement>
