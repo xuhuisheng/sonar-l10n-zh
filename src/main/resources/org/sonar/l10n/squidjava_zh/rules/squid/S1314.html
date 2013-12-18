@@ -1,0 +1,15 @@
+<p>
+以0开头的整数数值不是16进制而是8进制。
+虽然Java支持8进制数值，但是大多数开发者没有相关的经验。
+他们可能没有意识到是8进制，可能误认为是16进制。
+</p>
+
+<h2>不符合规则的代码示例</h2>
+<pre>
+int myNumber = 010;   // myNumber will hold 8, not 10 - was this really expected?
+</pre>
+
+<h2>符合规则的方案</h2>
+<pre>
+int myNumber = 8;
+</pre>

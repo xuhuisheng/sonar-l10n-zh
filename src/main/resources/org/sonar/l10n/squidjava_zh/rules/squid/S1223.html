@@ -1,0 +1,17 @@
+让类和方法使用相同的名字是容易误导的，让其他人想知道这样做的目的是什么，或者这个方法应该是个构造方法。
+
+<h2>不符合规则的代码示例</h2>
+<pre>
+class Foo {
+  public Foo() {...}
+  public int Foo(String label) {...} // Noncompliant
+}
+</pre>
+
+<h2>符合规则的方案</h2>
+<pre>
+class Foo {
+  public Foo() {...}
+  public int foo(String label) {...} // Compliant
+}
+</pre>

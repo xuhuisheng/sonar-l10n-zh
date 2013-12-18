@@ -1,0 +1,25 @@
+<p>
+在很多不同的情况依赖相同表达式值时<code>switch</code>语句才是有用的。
+对于一个或两个条件的情况，使用<code>if</code>语句更具可读性。
+</p>
+
+<h2>不符合规则的代码示例</h2>
+<pre>
+switch (variable) {
+  case 0:
+    doSomething();
+    break;
+  default:
+    doSomethingElse();
+    break;
+}
+</pre>
+
+<h2>符合规范的方案</h2>
+<pre>
+if (variable == 0) {
+  doSomething();
+} else {
+  doSomethingElse();
+}
+</pre>

@@ -1,0 +1,35 @@
+<p>
+根据Java的<code>Comparable.compareTo(T o)</code>文档：
+</p>
+
+<blockquote>
+强烈建议，但不强制要求<code>(x.compareTo(y)==0) == (x.equals(y))</code>。
+通常来说，任何实现了Comparable接口的类，违反了这个条件应该清楚的认识到这个现实。
+建议内容是“注意：这个类是自然排序结果和equals结果不相符。”
+</blockquote>
+
+<p>
+当违反这个规则时，会发生奇怪和非预期的失败。
+比如，Java 5的<code>PriorityQueue.remove()</code>方法依赖<code>compareTo()</code>，但是Java 6依赖<code>equals()</code>。
+</p>
+
+<h2>不符合规则的代码示例</h2>
+
+<pre>
+public class Foo implements Comparable&lt;Foo&gt; {
+  @Override
+  public int compareTo(Foo foo) { /* ... */ }      // Noncompliant as the equals(Object obj) method is not overridden
+}
+</pre>
+
+<h2>符合规则的方案</h2>
+
+<pre>
+public class Foo implements Comparable&lt;Foo&gt; {
+  @Override
+  public int compareTo(Foo foo) { /* ... */ }      // Compliant
+
+  @Override
+  public boolean equals(Object obj) { /* ... */ }
+}
+</pre>

@@ -1,0 +1,28 @@
+<p>
+根据Oracle定义的Java代码规范，源代码中class或interface声明的部分应该使用以下规则：
+<ul>
+<li>类和实例变量</li>
+<li>构造方法</li>
+<li>方法</li>
+</ul>
+</p>
+
+<h2>不符合规则的代码示例</h2>
+<pre>
+public class Foo {
+  private int field = 0;
+  isTrue() {...}
+  public Foo() {...}                // Noncompliant, constructor defined after method
+  public static final int OPEN = 4; // Noncompliant, variable defined after method
+}
+</pre>
+
+<h2>符合规则的方法</h2>
+<pre>
+public class Foo{  // Compliant
+  public static final int OPEN = 4;
+  private int field = 0;
+  public Foo() {...}
+  public boolean isTrue() {...}
+}
+</pre>

@@ -1,0 +1,12 @@
+<p>缺乏经验的Java开发者可能期望<code>Object.equals(Object obj)</code>方法可以正确处理左侧为null的情况，但是实际不是这样的。
+</p>
+
+<h2>不符合规则的代码示例</h2>
+<pre>
+if (variable.equals(null)) { /* ... */ }   // Noncompliant - "variable" is really null, a NullPointerException is thrown
+</pre>
+
+<h2>符合规则的方案</h2>
+<pre>
+if (variable == null) { /* ... */ }        // Compliant
+</pre>
