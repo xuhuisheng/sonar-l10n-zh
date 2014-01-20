@@ -49,12 +49,7 @@
     <sonar-l10n-en-plugin.version>4.1</sonar-l10n-en-plugin.version>
     <sonar-core-plugin.version>4.1</sonar-core-plugin.version>
 
-    <sonar-pmd-plugin.version>1.5</sonar-pmd-plugin.version>
-    <sonar-checkstyle-plugin.version>1.5</sonar-checkstyle-plugin.version>
-    <sonar-findbugs-plugin.version>1.5</sonar-findbugs-plugin.version>
     <sonar-jacoco-plugin.version>1.5</sonar-jacoco-plugin.version>
-    <sonar-squid-java-plugin.version>1.5</sonar-squid-java-plugin.version>
-    <sonar-java-plugin.version>1.5</sonar-java-plugin.version>
   </properties>
 
   <dependencies>
@@ -84,41 +79,11 @@
 
     <dependency>
       <groupId>org.codehaus.sonar-plugins.java</groupId>
-      <artifactId>sonar-pmd-plugin</artifactId>
-      <version>${sonar-pmd-plugin.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.codehaus.sonar-plugins.java</groupId>
-      <artifactId>sonar-checkstyle-plugin</artifactId>
-      <version>${sonar-checkstyle-plugin.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.codehaus.sonar-plugins.java</groupId>
-      <artifactId>sonar-findbugs-plugin</artifactId>
-      <version>${sonar-findbugs-plugin.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.codehaus.sonar-plugins.java</groupId>
       <artifactId>sonar-jacoco-plugin</artifactId>
       <version>${sonar-jacoco-plugin.version}</version>
       <scope>test</scope>
     </dependency>
 
-    <dependency>
-      <groupId>org.codehaus.sonar-plugins.java</groupId>
-      <artifactId>sonar-squid-java-plugin</artifactId>
-      <version>${sonar-squid-java-plugin.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.codehaus.sonar-plugins.java</groupId>
-      <artifactId>sonar-java-plugin</artifactId>
-      <version>${sonar-java-plugin.version}</version>
-      <scope>test</scope>
-    </dependency>
   </dependencies>
 
   <developers>

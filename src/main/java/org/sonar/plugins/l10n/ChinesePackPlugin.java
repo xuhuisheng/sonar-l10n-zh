@@ -1,6 +1,6 @@
 /*
  * L10n :: Chinese Pack
- * Copyright (C) 2013 Mossle
+ * Copyright (C) 2014 Mossle
  * dev@sonar.codehaus.org
  *
  * This program is free software; you can redistribute it and/or
