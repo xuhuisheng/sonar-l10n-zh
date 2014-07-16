@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.codehaus.sonar-plugins</groupId>
     <artifactId>parent</artifactId>
-    <version>17</version>
+    <version>18</version>
   </parent>
 
   <groupId>org.codehaus.sonar-plugins.l10n</groupId>
@@ -45,9 +45,9 @@
 
   <properties>
     <sonar.pluginClass>org.sonar.plugins.l10n.ChinesePackPlugin</sonar.pluginClass>
-    <sonar.version>4.3</sonar.version>
-    <sonar-l10n-en-plugin.version>4.3</sonar-l10n-en-plugin.version>
-    <sonar-core-plugin.version>4.3</sonar-core-plugin.version>
+    <sonar.version>4.4-RC2</sonar.version>
+    <sonar-l10n-en-plugin.version>4.4-RC2</sonar-l10n-en-plugin.version>
+    <sonar-core.version>4.4-RC2</sonar-core.version>
 
     <sonar-jacoco-plugin.version>1.5</sonar-jacoco-plugin.version>
   </properties>
@@ -71,9 +71,9 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.codehaus.sonar.plugins</groupId>
-      <artifactId>sonar-core-plugin</artifactId>
-      <version>${sonar-core-plugin.version}</version>
+      <groupId>org.codehaus.sonar</groupId>
+      <artifactId>sonar-core</artifactId>
+      <version>${sonar-core.version}</version>
       <scope>test</scope>
     </dependency>
 
