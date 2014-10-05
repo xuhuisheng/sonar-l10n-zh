@@ -49,7 +49,7 @@
     <sonar-l10n-en-plugin.version>4.5</sonar-l10n-en-plugin.version>
     <sonar-core.version>4.5</sonar-core.version>
 
-    <sonar-jacoco-plugin.version>2.2.1</sonar-jacoco-plugin.version>
+    <sonar-jacoco-plugin.version>2.3</sonar-jacoco-plugin.version>
   </properties>
 
   <dependencies>
