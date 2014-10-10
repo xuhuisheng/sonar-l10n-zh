@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.codehaus.sonar-plugins</groupId>
     <artifactId>parent</artifactId>
-    <version>17</version>
+    <version>18</version>
   </parent>
 
   <groupId>org.codehaus.sonar-plugins.l10n</groupId>
@@ -15,7 +15,7 @@
 
   <name>L10n :: Chinese Pack</name>
   <url>http://docs.codehaus.org/display/SONAR/Chinese+Pack</url>
-  <inceptionYear>2013</inceptionYear>
+  <inceptionYear>2014</inceptionYear>
   <description><![CDATA[Language Pack for Chinese]]></description>
 
   <organization>
@@ -45,16 +45,12 @@
 
   <properties>
     <sonar.pluginClass>org.sonar.plugins.l10n.ChinesePackPlugin</sonar.pluginClass>
-    <sonar.version>4.1</sonar.version>
-    <sonar-l10n-en-plugin.version>4.1</sonar-l10n-en-plugin.version>
-    <sonar-core-plugin.version>4.1</sonar-core-plugin.version>
+    <sonar.version>4.5</sonar.version>
+    <sonar-l10n-en-plugin.version>4.5</sonar-l10n-en-plugin.version>
+    <sonar-core-plugin.version>4.5</sonar-core-plugin.version>
 
-    <sonar-pmd-plugin.version>1.5</sonar-pmd-plugin.version>
-    <sonar-checkstyle-plugin.version>1.5</sonar-checkstyle-plugin.version>
     <sonar-findbugs-plugin.version>1.5</sonar-findbugs-plugin.version>
-    <sonar-jacoco-plugin.version>1.5</sonar-jacoco-plugin.version>
-    <sonar-squid-java-plugin.version>1.5</sonar-squid-java-plugin.version>
-    <sonar-java-plugin.version>1.5</sonar-java-plugin.version>
+    <sonar-java-plugin.version>2.4</sonar-java-plugin.version>
   </properties>
 
   <dependencies>
@@ -84,33 +80,8 @@
 
     <dependency>
       <groupId>org.codehaus.sonar-plugins.java</groupId>
-      <artifactId>sonar-pmd-plugin</artifactId>
-      <version>${sonar-pmd-plugin.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.codehaus.sonar-plugins.java</groupId>
-      <artifactId>sonar-checkstyle-plugin</artifactId>
-      <version>${sonar-checkstyle-plugin.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.codehaus.sonar-plugins.java</groupId>
       <artifactId>sonar-findbugs-plugin</artifactId>
       <version>${sonar-findbugs-plugin.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.codehaus.sonar-plugins.java</groupId>
-      <artifactId>sonar-jacoco-plugin</artifactId>
-      <version>${sonar-jacoco-plugin.version}</version>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.codehaus.sonar-plugins.java</groupId>
-      <artifactId>sonar-squid-java-plugin</artifactId>
-      <version>${sonar-squid-java-plugin.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
