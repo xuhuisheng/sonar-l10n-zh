@@ -46,10 +46,9 @@
   <properties>
     <sonar.pluginClass>org.sonar.plugins.l10n.ChinesePackPlugin</sonar.pluginClass>
     <sonar.version>4.5</sonar.version>
-    <sonar-l10n-en-plugin.version>4.5</sonar-l10n-en-plugin.version>
-    <sonar-core-plugin.version>4.5</sonar-core-plugin.version>
+    <sonar-core.version>4.5</sonar-core.version>
 
-    <sonar-findbugs-plugin.version>1.5</sonar-findbugs-plugin.version>
+    <sonar-findbugs-plugin.version>2.4</sonar-findbugs-plugin.version>
     <sonar-java-plugin.version>2.4</sonar-java-plugin.version>
   </properties>
 
@@ -66,15 +65,9 @@
     </dependency>
 
     <dependency>
-      <groupId>org.codehaus.sonar.plugins</groupId>
-      <artifactId>sonar-l10n-en-plugin</artifactId>
-      <version>${sonar-l10n-en-plugin.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.codehaus.sonar.plugins</groupId>
-      <artifactId>sonar-core-plugin</artifactId>
-      <version>${sonar-core-plugin.version}</version>
+      <groupId>org.codehaus.sonar</groupId>
+      <artifactId>sonar-core</artifactId>
+      <version>${sonar-core.version}</version>
       <scope>test</scope>
     </dependency>
 
