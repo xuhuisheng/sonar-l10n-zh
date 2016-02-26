@@ -3,9 +3,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.codehaus.sonar-plugins</groupId>
+    <groupId>org.sonarsource.parent</groupId>
     <artifactId>parent</artifactId>
-    <version>18</version>
+    <version>25</version>
   </parent>
 
   <groupId>org.codehaus.sonar-plugins.l10n</groupId>
@@ -45,36 +45,29 @@
 
   <properties>
     <sonar.pluginClass>org.sonar.plugins.l10n.ChinesePackPlugin</sonar.pluginClass>
-    <sonar.version>4.5</sonar.version>
-    <sonar-l10n-en-plugin.version>4.5</sonar-l10n-en-plugin.version>
-    <sonar-core.version>4.5</sonar-core.version>
+    <sonar.version>5.3</sonar.version>
 
     <sonar-jacoco-plugin.version>2.3</sonar-jacoco-plugin.version>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>org.codehaus.sonar</groupId>
+      <groupId>org.sonarsource.sonarqube</groupId>
       <artifactId>sonar-plugin-api</artifactId>
       <version>${sonar.version}</version>
+	  <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.codehaus.sonar</groupId>
+      <groupId>org.sonarsource.sonarqube</groupId>
       <artifactId>sonar-testing-harness</artifactId>
       <version>${sonar.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.codehaus.sonar.plugins</groupId>
-      <artifactId>sonar-l10n-en-plugin</artifactId>
-      <version>${sonar-l10n-en-plugin.version}</version>
-      <scope>test</scope>
+	  <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.codehaus.sonar</groupId>
+      <groupId>org.sonarsource.sonarqube</groupId>
       <artifactId>sonar-core</artifactId>
-      <version>${sonar-core.version}</version>
-      <scope>test</scope>
+      <version>${sonar.version}</version>
+	  <scope>test</scope>
     </dependency>
 
     <dependency>
@@ -90,13 +83,15 @@
     <developer>
       <id>xuhuisheng</id>
       <name>Xu Huisheng</name>
+      <organization>Mossle</organization>
+      <organizationUrl>http://www.mossle.com</organizationUrl>
     </developer>
   </developers>
 
   <build>
     <plugins>
       <plugin>
-        <groupId>org.codehaus.sonar</groupId>
+        <groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
         <artifactId>sonar-packaging-maven-plugin</artifactId>
         <extensions>true</extensions>
         <configuration>
