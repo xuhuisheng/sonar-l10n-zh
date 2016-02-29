@@ -25,13 +25,13 @@ import org.sonar.test.i18n.I18nMatchers;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ChinesePackPluginTest {
-  
+  /*
   // https://jira.sonarsource.com/browse/SONAR-7226
   @Test
   public void bundles_should_be_up_to_date() {
     I18nMatchers.assertBundlesUpToDate();
   }
-  
+  */
 
   @Test
   public void should_not_have_extensions() {
