@@ -2,21 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.sonarsource.parent</groupId>
-    <artifactId>parent</artifactId>
-    <version>25</version>
-  </parent>
-
-  <groupId>org.codehaus.sonar-plugins.l10n</groupId>
+  <groupId>org.sonarqube.l10n.zh</groupId>
   <artifactId>sonar-l10n-zh-plugin</artifactId>
   <packaging>sonar-plugin</packaging>
   <version>1.9-SNAPSHOT</version>
 
   <name>L10n :: Chinese Pack</name>
-  <url>http://docs.codehaus.org/display/SONAR/Chinese+Pack</url>
+  <url>https://github.com/SonarCommunity/sonar-l10n-zh</url>
   <inceptionYear>2014</inceptionYear>
-  <description><![CDATA[Language Pack for Chinese]]></description>
+  <description>Language Pack for Chinese</description>
 
   <organization>
     <name>Mossle</name>
@@ -63,16 +57,7 @@
       <version>${sonar.version}</version>
 	  <scope>test</scope>
     </dependency>
-	<!--
-    <dependency>
-      <groupId>org.sonarsource.sonarqube</groupId>
-      <artifactId>sonar-core</artifactId>
-      <version>${sonar.version}</version>
-	  <scope>test</scope>
-    </dependency>
-	-->
-
-    <dependency>
+	    <dependency>
       <groupId>org.codehaus.sonar-plugins.java</groupId>
       <artifactId>sonar-jacoco-plugin</artifactId>
       <version>${sonar-jacoco-plugin.version}</version>
@@ -95,17 +80,19 @@
       <plugin>
         <groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
         <artifactId>sonar-packaging-maven-plugin</artifactId>
+        <version>1.15</version>
         <extensions>true</extensions>
         <configuration>
           <basePlugin>l10nen</basePlugin>
           <pluginName>Chinese Pack</pluginName>
-          <pluginDescription><![CDATA[Language pack for Chinese]]></pluginDescription>
+          <pluginDescription>Language pack for Chinese</pluginDescription>
         </configuration>
       </plugin>
 
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>native2ascii-maven-plugin</artifactId>
+        <version>1.0-beta-1</version>
         <executions>
           <execution>
             <goals>
