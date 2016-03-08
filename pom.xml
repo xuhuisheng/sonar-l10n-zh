@@ -42,6 +42,7 @@
     <sonar.version>5.3</sonar.version>
 
     <sonar-jacoco-plugin.version>2.3</sonar-jacoco-plugin.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <dependencies>
