@@ -8,7 +8,7 @@
   <version>1.11-SNAPSHOT</version>
 
   <name>L10n :: Chinese Pack</name>
-  <url>https://github.com/SonarCommunity/sonar-l10n-zh</url>
+  <url>https://github.com/SonarQubeCommunity/sonar-l10n-zh</url>
   <inceptionYear>2014</inceptionYear>
   <description>Language Pack for Chinese</description>
 
@@ -33,7 +33,7 @@
   </scm>
 
   <issueManagement>
-    <system>GitHub</system>
+    <system>GitHub Issues</system>
     <url>https://github.com/SonarQubeCommunity/sonar-l10n-zh/issues</url>
   </issueManagement>
 
