@@ -49,6 +49,8 @@ public class Main implements Comparator<String> {
 		String fileName = args[0];
 		copy(fileName);
 		// sort(fileName);
+
+		// fillProperties("core_zh.properties", "dest/core.properties", "src/core_zh0.properties");
 	}
 
 	public static void copy(String fileName) throws Exception {
@@ -164,5 +166,60 @@ public class Main implements Comparator<String> {
 		}
 		writer.flush();
 		writer.close();
+	}
+
+	static void fillProperties(String sourceFileName, String templateFileName, String targetFileName) throws Exception {
+		File templateFile = new File(templateFileName);
+		File targetFile = new File(targetFileName);
+
+		Properties prop = readProperties(sourceFileName);
+
+		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(templateFile)));
+		PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(targetFile)));
+		String line = null;
+		
+		while ((line = reader.readLine()) != null) {
+			if (line.trim().length() == 0) {
+				writer.println("");
+				continue;
+			}
+			if (line.startsWith("#")) {
+				writer.println(line);
+				continue;
+			}
+			String value = prop.getProperty(line);
+			if (value != null) {
+				writer.println(line + "=" + value);
+			}
+		}
+		reader.close();
+		writer.flush();
+		writer.close();
+	}
+
+	static Properties readProperties(String sourceFileName) throws Exception {
+		File sourceFile = new File(sourceFileName);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(sourceFile), "UTF-8"));
+		String line = null;
+		
+		Properties prop = new Properties();
+		
+		while ((line = reader.readLine()) != null) {
+			if (line.trim().length() == 0) {
+				continue;
+			}
+			if (line.startsWith("#")) {
+				continue;
+			}
+			String[] array = line.trim().split("=");
+			if (array.length != 2) {
+				System.out.println(line);
+				continue;
+			}
+			String key = array[0];
+			String value = array[1];
+			prop.setProperty(key, value);
+		}
+		return prop;
 	}
 }
