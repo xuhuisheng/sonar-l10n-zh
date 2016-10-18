@@ -13,9 +13,9 @@ compatibility Matrix:
 
 兼容列表如下：
 
-SonarQube     |6.0 |    |    |    |   |   |   |
+SonarQube     |6.0 |6.1 |    |    |   |   |   |
 --------------|----|----|----|----|---|---|---|
-sonar-l10n-zh |1.12|    |    |    |   |   |   |
+sonar-l10n-zh |1.12|1.13|    |    |   |   |   |
 SonarQube     |5.4 |5.5 |5.6 |    |   |   |   |
 sonar-l10n-zh |1.9 |1.10|1.11|    |   |   |   |
 SonarQube     |4.0 |4.1 |    |    |   |   |   |
