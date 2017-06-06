@@ -22,8 +22,6 @@ package org.sonar.plugins.l10n;
 import org.junit.Test;
 import org.sonar.test.i18n.I18nMatchers;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 public class ChinesePackPluginTest {
   // https://jira.sonarsource.com/browse/SONAR-7226
   @Test
@@ -31,10 +29,5 @@ public class ChinesePackPluginTest {
 	// Skip test, because of merge conflict in SonarQube-6.1
 	// https://github.com/SonarSource/sonarqube/commit/50c03de3431007269b0966a8fdf1fe032c9521f6
     I18nMatchers.assertBundlesUpToDate();
-  }
-
-  @Test
-  public void should_not_have_extensions() {
-    assertThat(new ChinesePackPlugin().getExtensions()).isEmpty();
   }
 }
