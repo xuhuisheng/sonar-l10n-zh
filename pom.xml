@@ -5,7 +5,7 @@
   <groupId>org.sonarqube.l10n.zh</groupId>
   <artifactId>sonar-l10n-zh-plugin</artifactId>
   <packaging>sonar-plugin</packaging>
-  <version>1.21-RC2-SNAPSHOT</version>
+  <version>1.22-SNAPSHOT</version>
 
   <name>L10n :: Chinese Pack</name>
   <url>https://github.com/SonarQubeCommunity/sonar-l10n-zh</url>
