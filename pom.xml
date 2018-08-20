@@ -104,11 +104,13 @@
     </plugins>
   </build>
 
+<!--
   <repositories>
     <repository>
 	  <id>sonar</id>
 	  <url>https://repox.sonarsource.com/sonarsource</url>
 	</repository>
   </repositories>
+-->
 
 </project>
