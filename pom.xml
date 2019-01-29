@@ -5,7 +5,7 @@
   <groupId>org.sonarqube.l10n.zh</groupId>
   <artifactId>sonar-l10n-zh-plugin</artifactId>
   <packaging>sonar-plugin</packaging>
-  <version>1.26-RC1</version>
+  <version>1.26-SNAPSHOT</version>
 
   <name>L10n :: Chinese Pack</name>
   <url>https://github.com/SonarQubeCommunity/sonar-l10n-zh</url>
@@ -26,10 +26,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:git://github.com/SonarQubeCommunity/sonar-l10n-zh.git</connection>
-    <developerConnection>scm:git:git@github.com:SonarQubeCommunity/sonar-l10n-zh.git</developerConnection>
+    <connection>scm:git:https://github.com/SonarQubeCommunity/sonar-l10n-zh.git</connection>
+    <developerConnection>scm:git:https://github.com/SonarQubeCommunity/sonar-l10n-zh.git</developerConnection>
     <url>https://github.com/SonarQubeCommunity/sonar-l10n-zh</url>
-    <tag>sonar-l10n-zh-plugin-1.26-RC1</tag>
   </scm>
 
   <issueManagement>
