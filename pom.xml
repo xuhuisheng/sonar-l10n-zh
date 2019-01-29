@@ -117,12 +117,12 @@
     <repository>
       <id>releases</id>
       <name>Nexus Release Repository</name>
-      <url>file://./target/releases</url>
+      <url>file:./target/releases</url>
     </repository>
     <snapshotRepository>
       <id>snapshots</id>
       <name>Nexus Snapshot Repository</name>
-      <url>http://./target/snapshots</url>
+      <url>file:./target/snapshots</url>
     </snapshotRepository>
   </distributionManagement>
 </project>
