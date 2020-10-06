@@ -39,7 +39,7 @@
 
   <properties>
     <sonar.pluginClass>org.sonar.plugins.l10n.ChinesePackPlugin</sonar.pluginClass>
-    <sonar.version>8.4.0.35506</sonar.version>
+    <sonar.version>8.5.0.37579</sonar.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
