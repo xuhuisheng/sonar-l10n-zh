@@ -22,7 +22,6 @@ package org.sonar.plugins.l10n;
 import org.sonar.api.Plugin;
 
 import java.util.Collections;
-import java.util.List;
 
 public final class ChinesePackPlugin implements Plugin {
 
