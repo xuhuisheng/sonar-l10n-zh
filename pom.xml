@@ -8,7 +8,7 @@
   <version>8.7-RC2-SNAPSHOT</version>
 
   <name>L10n :: Chinese Pack</name>
-  <url>https://github.com/SonarQubeCommunity/sonar-l10n-zh</url>
+  <url>https://github.com/xuhuisheng/sonar-l10n-zh</url>
   <inceptionYear>2014</inceptionYear>
   <description>Language Pack for Chinese</description>
 
@@ -26,15 +26,15 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:https://github.com/SonarQubeCommunity/sonar-l10n-zh.git</connection>
-    <developerConnection>scm:git:https://github.com/SonarQubeCommunity/sonar-l10n-zh.git</developerConnection>
-    <url>https://github.com/SonarQubeCommunity/sonar-l10n-zh</url>
+    <connection>scm:git:https://github.com/xuhuisheng/sonar-l10n-zh.git</connection>
+    <developerConnection>scm:git:https://github.com/xuhuisheng/sonar-l10n-zh.git</developerConnection>
+    <url>https://github.com/xuhuisheng/sonar-l10n-zh</url>
     <tag>HEAD</tag>
   </scm>
 
   <issueManagement>
     <system>GitHub Issues</system>
-    <url>https://github.com/SonarQubeCommunity/sonar-l10n-zh/issues</url>
+    <url>https://github.com/xuhuisheng/sonar-l10n-zh/issues</url>
   </issueManagement>
 
   <properties>
