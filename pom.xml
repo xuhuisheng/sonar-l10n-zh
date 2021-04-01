@@ -5,10 +5,10 @@
   <groupId>org.sonarqube.l10n.zh</groupId>
   <artifactId>sonar-l10n-zh-plugin</artifactId>
   <packaging>sonar-plugin</packaging>
-  <version>8.4-SNAPSHOT</version>
+  <version>8.8-SNAPSHOT</version>
 
   <name>L10n :: Chinese Pack</name>
-  <url>https://github.com/SonarQubeCommunity/sonar-l10n-zh</url>
+  <url>https://github.com/xuhuisheng/sonar-l10n-zh</url>
   <inceptionYear>2014</inceptionYear>
   <description>Language Pack for Chinese</description>
 
@@ -26,22 +26,27 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:https://github.com/SonarQubeCommunity/sonar-l10n-zh.git</connection>
-    <developerConnection>scm:git:https://github.com/SonarQubeCommunity/sonar-l10n-zh.git</developerConnection>
-    <url>https://github.com/SonarQubeCommunity/sonar-l10n-zh</url>
+    <connection>scm:git:https://github.com/xuhuisheng/sonar-l10n-zh.git</connection>
+    <developerConnection>scm:git:https://github.com/xuhuisheng/sonar-l10n-zh.git</developerConnection>
+    <url>https://github.com/xuhuisheng/sonar-l10n-zh</url>
     <tag>HEAD</tag>
   </scm>
 
   <issueManagement>
     <system>GitHub Issues</system>
-    <url>https://github.com/SonarQubeCommunity/sonar-l10n-zh/issues</url>
+    <url>https://github.com/xuhuisheng/sonar-l10n-zh/issues</url>
   </issueManagement>
 
   <properties>
     <sonar.pluginClass>org.sonar.plugins.l10n.ChinesePackPlugin</sonar.pluginClass>
-    <sonar.version>8.3.0.34182</sonar.version>
+    <sonar.version>8.7.0.41497</sonar.version>
+    <junit.version>4.13.1</junit.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <sonar.projectKey>xuhuisheng_sonar-l10n-zh</sonar.projectKey>
+    <sonar.organization>xuhuisheng</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
   </properties>
 
   <dependencies>
@@ -63,11 +68,11 @@
       <version>${sonar.version}</version>
       <scope>test</scope>
     </dependency>
-    <!-- TODO: sonar-testing-harness 8.1.0 missing hamcrest-core version -->
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
 
@@ -108,17 +113,14 @@
           </execution>
         </executions>
       </plugin>
+
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.6</version>
+      </plugin>
     </plugins>
   </build>
-
-<!--
-  <repositories>
-    <repository>
-	  <id>sonar</id>
-	  <url>https://repox.sonarsource.com/sonarsource</url>
-	</repository>
-  </repositories>
--->
 
   <distributionManagement>
     <repository>
@@ -132,4 +134,43 @@
       <url>file:./target/snapshots</url>
     </snapshotRepository>
   </distributionManagement>
+
+  <profiles>
+    <profile>
+      <id>coverage</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>prepare-agent</id>
+                <goals>
+                  <goal>prepare-agent</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>report</id>
+                <goals>
+                  <goal>report</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+  <repositories>
+    <repository>
+      <id>aliyun</id>
+      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+    </repository>
+  </repositories>
+
 </project>

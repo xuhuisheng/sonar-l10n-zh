@@ -19,14 +19,20 @@
  */
 package org.sonar.plugins.l10n;
 
-import org.sonar.api.SonarPlugin;
+import org.sonar.api.Plugin;
 
 import java.util.Collections;
-import java.util.List;
 
-public final class ChinesePackPlugin extends SonarPlugin {
+public final class ChinesePackPlugin implements Plugin {
 
-  public List getExtensions() {
-    return Collections.emptyList();
+  @Override
+  public String toString() {
+    return getClass().getSimpleName();
   }
+
+  @Override
+  public void define(Context context) {
+    context.addExtensions(Collections.emptyList());
+  }
+
 }
