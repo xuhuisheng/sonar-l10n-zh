@@ -1,1 +1,3 @@
 2020-12-11 1
+
+https://repo.maven.apache.org/maven2/org/sonarsource/sonarqube/sonar-core/9.0.0.45539/sonar-core-9.0.0.45539.jar
