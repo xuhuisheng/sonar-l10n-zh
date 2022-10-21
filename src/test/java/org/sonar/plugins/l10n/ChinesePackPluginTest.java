@@ -50,7 +50,7 @@ public class ChinesePackPluginTest {
 
     SonarRuntime runtime = SonarRuntimeImpl.forSonarQube(Version.create(8, 5),
     	SonarQubeSide.SCANNER, SonarEdition.COMMUNITY);
-    Plugin.Context context = new PluginContextImpl.Builder().setSonarRuntime(runtime).build();	
+    Plugin.Context context = new PluginContextImpl.Builder().setSonarRuntime(runtime).build();
     chinesePackPlugin.define(context);
   }
 }
