@@ -5,7 +5,7 @@ Author: Xu Huisheng <xyz20003@gmail.com>
 
 Latest version: (https://github.com/SonarQubeCommunity/sonar-l10n-zh/releases/latest)
 
-compatibility Matrix: 
+compatibility Matrix:
 
 ---
 

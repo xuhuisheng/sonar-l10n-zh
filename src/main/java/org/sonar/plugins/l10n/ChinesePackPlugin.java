@@ -1,6 +1,6 @@
 /*
  * L10n :: Chinese Pack
- * Copyright (C) 2014-2016 SonarSource SA
+ * Copyright (C) 2014-2022 SonarSource SA
  * mailto:contact AT sonarsource DOT com
  *
  * This program is free software; you can redistribute it and/or
@@ -20,7 +20,6 @@
 package org.sonar.plugins.l10n;
 
 import org.sonar.api.Plugin;
-
 import java.util.Collections;
 
 public final class ChinesePackPlugin implements Plugin {
@@ -34,5 +33,4 @@ public final class ChinesePackPlugin implements Plugin {
   public void define(Context context) {
     context.addExtensions(Collections.emptyList());
   }
-
 }

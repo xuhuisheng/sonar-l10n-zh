@@ -1,4 +1,3 @@
-
 import java.io.*;
 import java.util.*;
 
@@ -177,7 +176,7 @@ public class Main implements Comparator<String> {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(templateFile)));
 		PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(targetFile)));
 		String line = null;
-		
+
 		while ((line = reader.readLine()) != null) {
 			if (line.trim().length() == 0) {
 				writer.println("");
@@ -201,9 +200,9 @@ public class Main implements Comparator<String> {
 		File sourceFile = new File(sourceFileName);
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(sourceFile), "UTF-8"));
 		String line = null;
-		
+
 		Properties prop = new Properties();
-		
+
 		while ((line = reader.readLine()) != null) {
 			if (line.trim().length() == 0) {
 				continue;
