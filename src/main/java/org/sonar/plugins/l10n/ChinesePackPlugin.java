@@ -29,7 +29,7 @@ public final class ChinesePackPlugin implements Plugin {
   public String toString() {
     return getClass().getSimpleName();
   }
-
+  @Override
   public void define(Context context) {
     context.addExtensions(Collections.emptyList());
   }
