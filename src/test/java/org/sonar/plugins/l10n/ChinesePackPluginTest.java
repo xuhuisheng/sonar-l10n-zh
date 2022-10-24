@@ -43,13 +43,13 @@ public class ChinesePackPluginTest {
   // coverage
   @Test
   public void testChinesePackPlugin() {
-  	ChinesePackPlugin chinesePackPlugin = new ChinesePackPlugin();
+    ChinesePackPlugin chinesePackPlugin = new ChinesePackPlugin();
 
-  	String pluginName = chinesePackPlugin.toString();
-  	Assert.assertEquals("ChinesePackPlugin", pluginName);
+    String pluginName = chinesePackPlugin.toString();
+    Assert.assertEquals("ChinesePackPlugin", pluginName);
 
     SonarRuntime runtime = SonarRuntimeImpl.forSonarQube(Version.create(8, 5),
-    	SonarQubeSide.SCANNER, SonarEdition.COMMUNITY);
+      SonarQubeSide.SCANNER, SonarEdition.COMMUNITY);
     Plugin.Context context = new PluginContextImpl.Builder().setSonarRuntime(runtime).build();
     chinesePackPlugin.define(context);
   }
