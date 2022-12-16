@@ -69,7 +69,7 @@ public class Main implements Comparator<String> {
       if (isMultipleLine) {
         buff.append("\n");
       } else {
-        buff.append(array[0])
+        buff.append(array[0].trim())
           .append("\n");
       }
       isMultipleLine = line.trim().endsWith("\\");
