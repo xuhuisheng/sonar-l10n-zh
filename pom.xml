@@ -5,7 +5,7 @@
   <groupId>org.sonarqube.l10n.zh</groupId>
   <artifactId>sonar-l10n-zh-plugin</artifactId>
   <packaging>sonar-plugin</packaging>
-  <version>9.10-SNAPSHOT</version>
+  <version>10.0-SNAPSHOT</version>
 
   <name>L10n :: Chinese Pack</name>
   <url>https://github.com/xuhuisheng/sonar-l10n-zh</url>
@@ -39,7 +39,7 @@
 
   <properties>
     <sonar.pluginClass>org.sonar.plugins.l10n.ChinesePackPlugin</sonar.pluginClass>
-    <sonar.version>9.9.0.65466</sonar.version>
+    <sonar.version>10.0.0.68432</sonar.version>
     <sonar-plugin-api.version>9.8.0.203</sonar-plugin-api.version>
     <junit.version>4.13.2</junit.version>
 
@@ -96,7 +96,6 @@
         <version>1.18.0.372</version>
         <extensions>true</extensions>
         <configuration>
-          <basePlugin>l10nen</basePlugin>
           <pluginName>Chinese Pack</pluginName>
           <pluginDescription>Language pack for Chinese</pluginDescription>
         </configuration>
