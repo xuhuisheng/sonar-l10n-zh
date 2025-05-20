@@ -60,7 +60,7 @@ public class MainTest {
 	}
 
 	String readDefaultMessages() throws Exception {
-		byte[] bytes = Files.readAllBytes(Paths.get("/home/work/Downloads/sonarqube-25.1.0.102122/web/js/main-DQdOQOnq.js.map"));
+		byte[] bytes = Files.readAllBytes(Paths.get("/home/work/Downloads/sonarqube-25.2.0.102705/web/js/main-DFHP3MKj.js.map"));
 		Map<String, Object> map = mapper.readValue(new String(bytes, StandardCharsets.UTF_8), Map.class);
 		List<String> sources = (List<String>) map.get("sources");
 		log.info("sources : {}", sources);
