@@ -17,7 +17,12 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package org.sonar.plugins.l10n;
+/*
+ * L10n :: Japanese Pack
+ * Forked and modified by Akito Moriki (C) 2025
+ * - Changed to Japanese translation plugin
+ */
+package com.github.benishouga.sonar.plugins.l10n;
 
 import org.junit.Test;
 import org.junit.Assert;
@@ -30,7 +35,7 @@ import org.sonar.api.SonarRuntime;
 import org.sonar.api.utils.Version;
 import org.sonar.test.i18n.I18nMatchers;
 
-public class ChinesePackPluginTest {
+public class JapanesePackPluginTest {
 
   // https://jira.sonarsource.com/browse/SONAR-7226
   @Test
@@ -42,15 +47,15 @@ public class ChinesePackPluginTest {
 
   // coverage
   @Test
-  public void testChinesePackPlugin() {
-    ChinesePackPlugin chinesePackPlugin = new ChinesePackPlugin();
+  public void testjapanesePackPlugin() {
+    JapanesePackPlugin japanesePackPlugin = new JapanesePackPlugin();
 
-    String pluginName = chinesePackPlugin.toString();
-    Assert.assertEquals("ChinesePackPlugin", pluginName);
+    String pluginName = japanesePackPlugin.toString();
+    Assert.assertEquals("JapanesePackPlugin", pluginName);
 
     SonarRuntime runtime = SonarRuntimeImpl.forSonarQube(Version.create(8, 5),
-      SonarQubeSide.SCANNER, SonarEdition.COMMUNITY);
+        SonarQubeSide.SCANNER, SonarEdition.COMMUNITY);
     Plugin.Context context = new PluginContextImpl.Builder().setSonarRuntime(runtime).build();
-    chinesePackPlugin.define(context);
+    japanesePackPlugin.define(context);
   }
 }

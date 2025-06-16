@@ -17,18 +17,24 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package org.sonar.plugins.l10n;
+/*
+ * L10n :: Japanese Pack
+ * Forked and modified by Akito Moriki (C) 2025
+ * - Changed to Japanese translation plugin
+ */
+package com.github.benishouga.sonar.plugins.l10n;
 
 import org.sonar.api.Plugin;
 
 import java.util.Collections;
 
-public final class ChinesePackPlugin implements Plugin {
+public final class JapanesePackPlugin implements Plugin {
 
   @Override
   public String toString() {
     return getClass().getSimpleName();
   }
+
   @Override
   public void define(Context context) {
     context.addExtensions(Collections.emptyList());

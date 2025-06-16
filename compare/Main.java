@@ -49,7 +49,7 @@ public class Main implements Comparator<String> {
     copy(fileName);
     // sort(fileName);
 
-    // fillProperties("core_zh.properties", "dest/core.properties", "src/core_zh0.properties");
+    // fillProperties("core_ja.properties", "dest/core.properties", "src/core_ja0.properties");
   }
 
   public static void copy(String fileName) throws Exception {
