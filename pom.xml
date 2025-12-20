@@ -29,7 +29,6 @@
     <connection>scm:git:https://github.com/xuhuisheng/sonar-l10n-zh.git</connection>
     <developerConnection>scm:git:https://github.com/xuhuisheng/sonar-l10n-zh.git</developerConnection>
     <url>https://github.com/xuhuisheng/sonar-l10n-zh</url>
-    <tag>sonar-l10n-zh-plugin-25.7</tag>
   </scm>
 
   <issueManagement>
@@ -39,7 +38,7 @@
 
   <properties>
     <sonar.pluginClass>org.sonar.plugins.l10n.ChinesePackPlugin</sonar.pluginClass>
-    <sonar.version>25.11.0.114957</sonar.version>
+    <sonar.version>25.12.0.117093</sonar.version>
     <sonar-plugin-api.version>9.8.0.203</sonar-plugin-api.version>
     <junit.version>4.13.2</junit.version>
 
